@@ -1,4 +1,4 @@
-# Mérida Portal - National Vehicle Registry & Fleet Management System
+# Vehiculos Portal - National Vehicle Registry & Fleet Management System
 
 An enterprise-grade, dockerized full-stack application engineered for official vehicle registration and *Tarjeta de Circulación* management. The user interface features a custom visual aesthetic inspired by the geometric modernism of Guatemalan artist Carlos Mérida, blending clean corporate data structures with minimalist typography and precise layout composition.
 
