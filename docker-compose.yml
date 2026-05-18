@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  sat_db:
+    image: postgres:15
+    container_name: db_vehiculos_sat
+    restart: always
+    environment:
+      POSTGRES_USER: sat_agente
+      POSTGRES_PASSWORD: sat_password123
+      POSTGRES_DB: sat_vehiculos
+    ports:
+      - "5434:5432"
+    volumes:
+      - sat_db_data_v2:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  sat_backend:
+    build: ./backend
+    container_name: api_vehiculos_sat
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=sat_db
+      - DB_USER=sat_agente
+      - DB_PASSWORD=sat_password123
+      - DB_NAME=sat_vehiculos
+    depends_on:
+      - sat_db
+
+  sat_frontend:
+    build: ./frontend
+    container_name: visual_vehiculos_sat
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://sat_backend:5000
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
+      - ./frontend/index.html:/app/index.html
+      - ./frontend/vite.config.js:/app/vite.config.js
+    depends_on:
+      - sat_backend
+
+volumes:
+  sat_db_data_v2:

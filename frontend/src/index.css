@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --color-background: #FDFDFB;
+  --color-foreground: #1E293B;
+  --color-card: #FFFFFF;
+  --color-card-foreground: #1E293B;
+  --color-border: #E5E7EB;
+  --color-input: #E5E7EB;
+  --color-muted: #F1F5F9;
+  --color-muted-foreground: #64748B;
+
+  --color-navy: #0B192C;
+  --color-navy-foreground: #FFFFFF;
+  --color-navy-hover: #16325B;
+
+  --color-amber: #B45309;
+  --color-amber-foreground: #FFFFFF;
+
+  --color-surface-soft: #F6F6F4;
+
+  --color-status-registered: #EAB308;
+  --color-status-registered-foreground: #FFFFFF;
+  --color-status-expired: #D97706;
+  --color-status-expired-foreground: #FFFFFF;
+  --color-status-pending: #94A3B8;
+  --color-status-pending-foreground: #FFFFFF;
+}
+
+@layer utilities {
+  .bg-pattern {
+    background-color: var(--color-background);
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0l20 20-20 20L0 20z' fill='%23000000' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+
+  * { 
+    border-color: var(--color-border); 
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1, h2, h3, h4 { 
+    font-family: var(--font-display); 
+  }
+}
