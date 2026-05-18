@@ -5,7 +5,7 @@ export default function Overview() {
   return (
     <div>
       <p className="text-[11px] uppercase tracking-widest text-muted-foreground">Bienvenido</p>
-      <h1 className="font-display text-4xl font-bold text-navy mt-1">AutoRegistro</h1>
+      <h1 className="font-display text-4xl font-bold text-navy mt-1">AutoRegistro GT</h1>
       <p className="text-muted-foreground mt-2">Gestiona tu flota vehicular desde un solo lugar.</p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">

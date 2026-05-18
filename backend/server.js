@@ -364,6 +364,9 @@ app.post('/api/metadata/:type', async (req, res) => {
     res.status(201).json(result.rows[0]);
   } catch (error) {
     console.error(`Error al agregar a ${type}:`, error);
+    if (error.code === '23505') {
+      return res.status(409).json({ error: `El elemento ya existe en el catálogo.` });
+    }
     res.status(500).json({ error: 'Error interno al agregar al catálogo' });
   }
 });

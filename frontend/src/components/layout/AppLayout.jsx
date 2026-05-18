@@ -20,7 +20,7 @@ export function AppLayout() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <span className="font-sans text-xl font-extrabold tracking-tight text-navy">
-              AutoRegistro
+              AutoRegistro GT
             </span>
           </Link>
 
@@ -81,7 +81,7 @@ export function AppLayout() {
               <Car className="h-6 w-6 text-white" />
             </div>
             <h2 className="font-display text-2xl font-semibold text-navy tracking-tight leading-none">
-              Mérida Portal
+              AutoRegistro GT
             </h2>
             <p className="text-[10px] uppercase tracking-widest text-muted-foreground mt-1.5 font-semibold">
               Gestión Vehicular
